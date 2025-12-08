@@ -1,270 +1,225 @@
-This repository contains 10 complete Java Web Technology experiments using Servlets, JSP, Filters, Sessions, Cookies, JDBC, MVC, and WebSockets.
-Each experiment includes code, explanation, and execution steps.
+# Java Web Technology Experiments — Servlets, JSP, JDBC, MVC, WebSockets
 
-✅ Experiment 1 — Basic Java Servlet: Request Handling
+This repository contains **10 complete Java Web Technology experiments** using **Servlets, JSP, Filters, Sessions, Cookies, JDBC, MVC, and WebSockets**.
+Each experiment includes **source code, explanation, and execution steps**.
 
-Uses HttpServlet to read request parameters and display output.
+---
 
-Files
+## 📂 Experiment List
 
-RequestHandler.java 
+---
 
-01JavaServlet
+## ✅ **Experiment 1 — Basic Java Servlet: Request Handling**
 
-index.html
+**Folder:** `01JavaServlet`
+**Files:**
 
-Summary
+* `RequestHandler.java`
+* `index.html`
 
-A form sends name and email using GET. Servlet fetches parameters and prints them.
+**Summary:**
+A simple HTML form sends *name* and *email* via GET. The servlet reads parameters and prints them.
 
-Learning Outcome
-
+**Learning Outcomes:**
 ✔ Handling GET requests
-✔ Using HttpServletRequest & HttpServletResponse
+✔ Using `HttpServletRequest` & `HttpServletResponse`
 
-✅ Experiment 2 — Cookies in Servlets
+---
 
-Demonstrates setting and reading cookies.
+## ✅ **Experiment 2 — Cookies in Servlets**
 
-Files
+**Folder:** `02Cookies`
+**Files:**
 
-SetCookieServlet.java
+* `SetCookieServlet.java`
+* `GetCookieServlet.java`
+* `index.html`
 
-GetCookieServlet.java
+**Summary:**
+User submits a username → servlet stores it as a cookie → another servlet reads and displays it.
 
-index.html
-
-
-02Cookies
-
-Summary
-
-The user submits a username → servlet stores cookie → another servlet reads cookie.
-
-Learning Outcome
-
+**Learning Outcomes:**
 ✔ Cookie creation
 ✔ Cookie retrieval
 ✔ Persistent user state
 
-✅ Experiment 3 — URL Rewriting
+---
 
-Shows how to pass data in URL when cookies are disabled.
+## ✅ **Experiment 3 — URL Rewriting**
 
-Files
+**Folder:** `03URLRewriting`
+**Files:**
 
-URLRewrite1.java
+* `URLRewrite1.java`
+* `URLRewrite2.java`
+* `index.html`
 
-URLRewrite2.java
+**Summary:**
+Servlet 1 stores data and forwards it via URL query string → Servlet 2 reads and displays it.
 
-index.html
-
-
-03URLRewriting
-
-Summary
-
-Servlet 1 stores data and forwards via URL query string → Servlet 2 prints value.
-
-Learning Outcome
-
+**Learning Outcomes:**
 ✔ Session tracking without cookies
 ✔ Encoding data in URLs
 
-✅ Experiment 4 — HttpSession API
+---
 
-Uses HttpSession for server-side session tracking.
+## ✅ **Experiment 4 — HttpSession API**
 
-Files
+**Folder:** `04HttpSessionAPI`
+**Files:**
 
-SessionSetServlet.java
+* `SessionSetServlet.java`
+* `SessionGetServlet.java`
+* `index.html`
 
-SessionGetServlet.java
+**Summary:**
+User enters name → stored in session → retrieved by second servlet.
 
-index.html
-
-
-04HttpSessionAPI
-
-Summary
-
-User enters name → stored in session → second servlet retrieves session value.
-
-Learning Outcome
-
+**Learning Outcomes:**
 ✔ Creating sessions
-✔ Reading attributes
-✔ Session ID
+✔ Setting & getting attributes
+✔ Understanding Session ID
 
-✅ Experiment 5 — Servlet Collaboration (RequestDispatcher)
+---
 
-Servlet-to-Servlet communication using forward().
+## ✅ **Experiment 5 — Servlet Collaboration (RequestDispatcher)**
 
-Files
+**Folder:** `05ServletCollaboration`
+**Files:**
 
-FirstServlet.java
+* `FirstServlet.java`
+* `SecondServlet.java`
+* `index.html`
 
-SecondServlet.java
+**Summary:**
+Form → First servlet stores attribute → forwards to second servlet → displays final output.
 
-index.html
+**Learning Outcomes:**
+✔ Servlet-to-servlet communication
+✔ Using `RequestDispatcher.forward()`
 
+---
 
-05ServletCollaboration
+## ✅ **Experiment 6 — Servlet Filters**
 
-Summary
+**Folder:** `06ServletFilters`
+**Files:**
 
-Form → First servlet (stores attribute) → forwards to second servlet → display result.
+* `LoggingFilter.java`
+* `WelcomeServlet.java`
+* `index.html`
 
-Learning Outcome
+**Summary:**
+Filter logs request before servlet runs, and logs response after servlet execution.
 
-✔ Inter-servlet communication
-✔ Using RequestDispatcher
-
-✅ Experiment 6 — Servlet Filters
-
-Demonstrates filters for logging or pre-processing.
-
-Files
-
-LoggingFilter.java
-
-WelcomeServlet.java
-
-index.html
-
-
-06ServletFilters
-
-Summary
-
-Filter logs request before servlet execution and logs response afterward.
-
-Learning Outcome
-
+**Learning Outcomes:**
 ✔ Filter chain
-✔ Pre/post servlet processing
+✔ Pre-processing & post-processing
 
-✅ Experiment 7 — JSP Form Handling
+---
 
-Handles form submission inside a JSP page.
+## ✅ **Experiment 7 — JSP Form Handling**
 
-Files
+**Folder:** `07JSPFormHandling`
+**Files:**
 
-index.jsp
+* `index.jsp`
 
+**Summary:**
+JSP page reads form inputs using scriptlets and displays them.
 
-07JSPFormHandling
+**Learning Outcomes:**
+✔ Accessing request parameters in JSP
+✔ Mixing Java + HTML (scriptlets)
 
-Summary
+---
 
-JSP reads submitted name & email directly via scriptlets.
+## ✅ **Experiment 8 — JDBC + Servlet + JSP Database Insertion**
 
-Learning Outcome
+**Folder:** `08DBServlet`
+**Files:**
 
-✔ JSP request parameter handling
-✔ Mixing HTML + Java (scriptlets)
+* `DBServlet.java`
+* `index.jsp`
+* `SQL Schema`
 
-✅ Experiment 8 — JDBC + Servlet + JSP Database Insertion
+**Summary:**
+Form → Servlet → JDBC → inserts data into `studentdb.users` table.
 
-Stores form data into MySQL database.
-
-Files
-
-DBServlet.java
-
-index.jsp
-
-SQL Schema
-
-
-08DBServlet
-
-Summary
-
-Form → Servlet → JDBC → Inserts into studentdb.users.
-
-Learning Outcome
-
-✔ JDBC connection
-✔ PreparedStatement usage
+**Learning Outcomes:**
+✔ JDBC connection setup
+✔ Using `PreparedStatement`
 ✔ Integration of JSP + Servlet + Database
 
-✅ Experiment 9 — MVC Architecture (Model–View–Controller)
+---
 
-Implements proper MVC using Servlet (Controller), POJO (Model), and JSP (View).
+## ✅ **Experiment 9 — MVC Architecture (Model–View–Controller)**
 
-Files
+**Folder:** `09MVCArchitecture`
+**Files:**
 
-UserController.java
+* `UserController.java`
+* `User.java` (Model)
+* `index.jsp`
+* `result.jsp`
 
-User.java
+**Summary:**
+Form → Controller → Model → forwarded to JSP View.
 
-index.jsp
-
-result.jsp
-
-
-09MVCArchitecture
-
-Summary
-
-Form → Controller → Model object → Stored in request → View (JSP) displays data.
-
-Learning Outcome
-
+**Learning Outcomes:**
 ✔ Separation of concerns
-✔ Model creation
-✔ RequestDispatcher → JSP
+✔ Passing model objects
+✔ Using `RequestDispatcher` with JSP Views
 
-✅ Experiment 10 — Real-Time Chat Using WebSockets
+---
 
-Implements a WebSocket-based multi-user chat room.
+## ✅ **Experiment 10 — Real-Time Chat Application Using WebSockets**
 
-Files
+**Folder:** `10ChatApplication`
+**Files:**
 
-index.jsp
+* `ChatServer.java`
+* `index.jsp`
+* `chat.jsp`
 
-chat.jsp
+**Summary:**
+A multi-user chat room using WebSocket API. Messages broadcast to all connected clients.
 
-ChatServer.java
-
-
-10ChatApplication
-
-Summary
-
-WebSocket endpoint broadcasts messages to all connected clients.
-
-Learning Outcome
-
-✔ WebSocket API
+**Learning Outcomes:**
+✔ WebSocket endpoint
 ✔ Real-time communication
-✔ Broadcasting messages
+✔ Broadcasting to all sessions
 
-How to Run the Projects
+---
 
-Install Apache Tomcat 10.1+
+# 🚀 How to Run All Experiments
 
-Install JDK 17+
+1. Install **Apache Tomcat 10.1+**
+2. Install **JDK 17+**
+3. Import each experiment folder into **Eclipse** or **IntelliJ**
+4. Add dependency (if required):
 
-Import each experiment folder into Eclipse/IntelliJ
+   ```
+   jakarta.servlet-api.jar
+   ```
+5. For Experiment 8:
 
-Add jakarta.servlet-api.jar (if not using Tomcat runtime)
+   * Install **MySQL**
+   * Run the provided SQL script
+6. Deploy project to Tomcat
+7. Open browser and run the experiment URLs
 
-For Experiment 8, install MySQL and run the SQL script
+---
 
-Deploy to Tomcat & run in browser
+# 🛠 Technologies Used
 
-Technologies Used
+* **Jakarta Servlets 5+**
+* **JSP**
+* **JDBC (MySQL)**
+* **MVC architecture**
+* **WebSockets**
+* **HTML & CSS**
+* **Apache Tomcat 10.1**
 
-Jakarta Servlets 5+
+---
 
-JSP
-
-JDBC (MySQL)
-
-WebSockets
-
-HTML, CSS
-
-Tomcat 10.1
