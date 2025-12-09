@@ -163,7 +163,7 @@ Form → Servlet → JDBC → inserts data into `studentdb.users` table.
 * `index.jsp`
 * `result.jsp`
 
-**Summary:**
+**Summary: **
 Form → Controller → Model → forwarded to JSP View.
 
 **Learning Outcomes:**
